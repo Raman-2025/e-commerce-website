@@ -1,0 +1,103 @@
+    /* Hero Section */
+    .hero {
+        text-align: center;
+        padding: 60px 20px;
+        background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+        max-width: 900px;
+    }
+
+    .hero img {
+        max-width: 200px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero h2 {
+        font-size: 28px;
+        color: #f2515e;
+        margin: 10px 0;
+    }
+
+    .hero h4 {
+        font-size: 20px;
+        color:#555;
+        margin: 10px 0 20px;
+    }
+
+    .btn-primary {
+        background-color: #f2515e;
+        color: #fff;
+        padding: 12px 25px;
+        font-size: 18px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        margin: 10px;
+    }
+
+    .btn-primary:hover {
+        background-color: #f2515e;
+    }
+
+    /* Details Section */
+    details {
+        margin: 20px auto;
+        max-width: 900px;
+        border-radius: 12px;
+        background-color: #fff;
+        padding: 15px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    details summary {
+        cursor: pointer;
+        padding: 15px;
+        background-color: #f2515e;
+        color: #fff;
+        border-radius: 8px;
+        font-size: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    details summary:hover {
+        background-color: #3C3C3C;
+    }
+
+    details[open] summary {
+        background-color: #3C3C3C;
+    }
+
+    details p {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        font-size: 16px;
+        color: #1f1f1f;
+        line-height: 1.5;
+        margin-top: 10px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 20px;
+        margin: 0;
+    }
+
+    ul li {
+        margin-bottom: 10px;
+    }
+
+    ul li h4 {
+        display: inline-block;
+        margin: 5px 0;
+        font-size: 18px;
+        color: #1f1f1f;
+    }
+

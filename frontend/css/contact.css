@@ -1,0 +1,45 @@
+.contact_taital {
+    color: #363636; /* Adjusted to align with your brand */
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.contact_section_2 .form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.contact_section_2 .form-group label {
+    font-size: 14px;
+    color: #555;
+    font-weight: bold;
+}
+
+.contact_section_2 .form-group input,
+.contact_section_2 .form-group textarea {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.contact_section_2 .form-group input:focus,
+.contact_section_2 .form-group textarea:focus {
+    border-color: #ff69b4;
+    box-shadow: 0 0 8px rgba(255, 105, 180, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #ff85c4;
+    transform: scale(1.05);
+}
+
+.image_7 img {
+    transition: transform 0.3s;
+}
+
+.image_7 img:hover {
+    transform: scale(1.03);
+}

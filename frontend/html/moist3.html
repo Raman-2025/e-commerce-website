@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- basic -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- mobile metas -->
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <!-- site metas -->
+        <title>products</title>
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- bootstrap css -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <!-- style css -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- Responsive-->
+        <link rel="stylesheet" href="css/responsive.css">
+        <!-- fevicon -->
+        <link rel="icon" href="images/fevicon.png" type="image/gif" />
+        <!-- Scrollbar Custom CSS -->
+        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+        <!-- Tweaks for older IEs-->
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+        <!-- fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+        <!-- owl stylesheets -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" rel="stylesheet" />
+          <!-- product  internal page style -->
+        <link href="css/internal_product.css" rel="stylesheet">
+    </head>
+<body>
+    <!-- Navbar section start -->
+      <!-- header section start -->
+      <div class="header_section">
+        <div class="container-fluid">
+           <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <a class="logo" href="#"><img src="images/3.png"width="100"></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                 <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                       <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link" href="product.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                 </ul>
+                 <form class="form-inline my-2 my-lg-0">
+                    <div class="login_menu">
+                        <ul>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="login.html"><img src="images/user-icon.png"></a></li>
+                            <li><a href="cart.html"><img src="images/trolly-icon.png"></a></li>
+                            <li><a href="search.html"><img src="images/search-icon.png"></a></li>
+                         </ul>
+                    </div>
+                 </form>
+              </div>
+           </nav>
+        </div>
+     </div>
+      <!-- header section end -->
+    <!-- Hero Section -->
+    <div class="hero">
+        <img src="images/moisture3.png" alt="Gel Moisturiser">
+        <h2>Night cream</h2>
+        <h4>Repair skin barrier | For all skin types</h4>
+        <h4>Price ₹535</h4>
+        <a href="#" class="btn btn-primary" onclick="addToCart('Night cream', 535, 'images/moisture3.png', 3)">Add to Cart</a>
+        <!-- <a href="#" class="btn-primary">Order Now</a> -->
+    </div>
+
+    <!-- About Product Section -->
+    <details>
+        <summary>About The Product</summary>
+        <p>We have found a product that hasa rejuvenating power. Introducing Simple Active Skin Barrier Care Restorative Rich Cream. This innovative solution is designed to address the concern of renewing and repairing your skin barrier, leaving you with
+            smooth, healthy and happy skin.</p>
+    </details>
+
+    <!-- Ingredients Section -->
+    <details>
+        <summary>Ingredients</summary>
+        <p>Aqua, Glycerine, Caprylic/capric Triglyceride, Polgiceryl-3 Methyglucose Distearate, Propanediol, Stearyl Alcohol, Sodium Acrylate/ Sodium Acryloyldimethyl Taurate Copolymer, Stearic Acid, Tapioca Starch, Digrill Ether, 15-19 Alkane, Caprylyl
+            Glycol, Hydroxyacetophenone, Polyglyceryl-6 Larrate, Panthenol, Polyglycerin-6, Citric Acid, Centela Asiatica Leaf Extract, Sorbitan Oleate, Sorbitan Sostearate, Tocopheryl Acetate, Tocopherol, Pantolactone</p>
+    </details>
+
+    <!-- Benefits Section -->
+    <details>
+        <summary>Benefits</summary>
+        <p>
+            <ul>
+                <li>
+                    <b><h4>For Skin Barrier:</h4></b> The 22% Ceramide Boosters fortify your skin's natural barrier, promoting overall skin health.</li>
+                <li>
+                    <b><h4>Renewal & Repair:</h4></b>Enriched with 1% Cica, this cream actively promotes skin renewal and repair, helping you achieve smoother, radiant skin.</li>
+                <li>
+                    <b><h4>Deep Hydration:</h4></b> Experience the indulgence of our ultra-rich creamy formula as it deeply hydrates, leaving your skin feeling supple, smooth, and nourished.</li>
+
+            </ul>
+        </p>
+    </details>
+    <!-- javascript for add to cart button -->
+    <script src="js/product_add_cart.js"></script>
+</body>
+
+</html>

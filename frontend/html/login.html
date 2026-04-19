@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Animated Login and Registration</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <!-- style of login page  -->
+   <link href="css/login.css" rel="stylesheet"> 
+</head>
+<body>
+
+<div class="container">
+   <div class="form-container" id="formContainer">
+      <!-- Left Section (Sign In) -->
+      <div class="form-section" id="signInSection">
+         <h1>Sign In</h1>
+         <!-- <div class="social-buttons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-google"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+         </div> -->
+         <!-- <p>or use your email account:</p>   -->
+        <form action="login.php" method="POST">
+         <div class="form-group">
+             <input type="email" name="email" placeholder="Email" required>
+         </div>
+         <div class="form-group">
+             <input type="password" name="password" placeholder="Password" required>
+         </div>
+         <button type="submit">SIGN IN</button>
+     </form>
+     
+      </div>
+
+      <!-- Right Section (Create Account) -->
+      <div class="form-section" id="createAccountSection">
+         <h1>Create Account</h1>
+         <!-- <div class="social-buttons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-google"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+         </div> -->
+         <!-- <p>or use your email for registration:</p> -->
+         <form action="register.php" method="POST">
+            <div class="form-group">
+               <input type="text" name="name" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+               <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+               <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit">REGISTER</button>
+         </form>
+      </div>
+   </div>
+
+   <!-- Left Side (Welcome Back) -->
+   <div class="welcome-section" id="welcomeBackSection">
+      <h2>Welcome Back!</h2>
+      <p>To keep connected with us, please login with your personal information.</p>
+      <button class="toggle-button" onclick="toggleForms()">SIGN IN</button>
+   </div>
+
+   <!-- Right Side (Hello, Friend) -->
+   <div class="welcome-section" id="helloFriendSection">
+      <h2>Hello, Friend!</h2>
+      <p>Enter your personal details and start your journey with us.</p>
+      <button class="toggle-button" onclick="toggleForms()">SIGN UP</button>
+   </div>
+</div>
+
+<script>
+   function toggleForms() {
+      const formContainer = document.getElementById("formContainer");
+      const welcomeBackSection = document.getElementById("welcomeBackSection");
+      const helloFriendSection = document.getElementById("helloFriendSection");
+      
+      // Toggle between the Sign In and Sign Up forms
+      formContainer.classList.toggle("sign-up-mode");
+
+      // Toggle visibility of the welcome sections
+      if (formContainer.classList.contains("sign-up-mode")) {
+         welcomeBackSection.classList.add("hidden");
+         helloFriendSection.classList.remove("hidden");
+      } else {
+         welcomeBackSection.classList.remove("hidden");
+         helloFriendSection.classList.add("hidden");
+      }
+   }
+</script>
+
+</body>
+</html>

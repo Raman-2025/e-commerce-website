@@ -1,0 +1,13 @@
+.about_img {
+  width: 200%;
+  height: 400px;
+  max-height: 450px;
+  /* Ensure the image height is consistent */
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  /* Adds a soft shadow for a floating effect */
+  margin-top: 50px;
+  /* Push the image down to overlap slightly with the text */
+  border-radius: 10px;
+  /* Rounded corners for a softer look */
+}

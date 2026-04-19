@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/product.css" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f7f7f7;
+        font-family: "Arial", sans-serif;
+      }
+
+      .navbar {
+        background-color: #4a148c;
+      }
+      
+      .navbar-expand-lg .navbar-nav {
+        margin: auto;
+        justify-content: space-between !important;
+      }
+
+      .cart-container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .cart-list-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        background-color: #fff;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+      }
+      .cart-list-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .cart-list-item button {
+        background: none;
+        border: none;
+        color: red;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+      .cart-list-item button:hover {
+        color: darkred;
+      }
+
+      .cart-list-item img {
+        max-width: 80px;
+        border-radius: 8px;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .cart-list-item img:hover {
+        transform: scale(1.1);
+      }
+
+      .cart-list-item .product-name {
+        font-weight: bold;
+        margin-left: 20px;
+        flex-grow: 1;
+        color: #4a148c;
+      }
+
+      .empty-cart {
+        display: none;
+        margin-top: 20px;
+        max-width: 250px;
+        width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cart-footer {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .cart-footer button {
+        background-color: #4a148c;
+        color: white;
+        padding: 15px 25px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s ease-in-out;
+      }
+      .cart-footer button:hover {
+        background-color: #6f1d9f;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .back-to-products {
+        display: block;
+        margin: 30px auto;
+        padding: 12px 20px;
+        background-color: #4a148c;
+        color: white;
+        text-align: center;
+        border-radius: 8px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+
+      .back-to-products:hover {
+        background-color: #6f1d9f;
+      }
+
+      .total-price {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #4a148c;
+        margin-bottom: 20px;
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .total-price span {
+        display: inline-block;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(-10px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+
+    <script>
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      function removeFromCart(productName) {
+        cart = cart.filter((item) => item.name !== productName);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        displayCart();
+      }
+
+      function updateQuantity(productName, quantity) {
+        const item = cart.find((item) => item.name === productName);
+        if (item) {
+          item.quantity = parseInt(quantity);
+          if (item.quantity <= 0) {
+            removeFromCart(productName);
+          } else {
+            localStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
+          }
+        }
+      }
+
+      function displayCart() {
+        const cartList = document.getElementById("cart-list");
+        const emptyCartImage = document.getElementById("empty-cart-image");
+        const totalPriceElement = document.getElementById("total-price");
+        cartList.innerHTML = "";
+
+        let totalPrice = 0;
+
+        if (cart.length === 0) {
+          emptyCartImage.style.display = "block";
+        } else {
+          emptyCartImage.style.display = "none";
+          cart.forEach((item) => {
+            const listItem = document.createElement("li");
+            listItem.classList.add("cart-list-item");
+            listItem.innerHTML = `
+              <img src="${item.image}" alt="${item.name}" />
+              <span class="product-name">${item.name} - ₹${item.price}</span>
+              <input
+                type="number"
+                value="${item.quantity}"
+                min="1"
+                style="width: 60px;"
+                onchange="updateQuantity('${item.name}', this.value)"
+              />
+              <span>₹${item.price * item.quantity}</span>
+              <button onclick="removeFromCart('${item.name}')"><i class="fas fa-trash-alt"></i></button>
+            `;
+            cartList.appendChild(listItem);
+            totalPrice += item.price * item.quantity;
+          });
+        }
+
+        totalPriceElement.innerHTML = `<span>Total: ₹${totalPrice}</span>`;
+      }
+
+      function checkoutCOD() {
+        if (cart.length === 0) {
+          alert("Your cart is empty! Add some items to proceed.");
+        } else {
+          alert("Proceeding with Cash on Delivery.");
+        }
+      }
+
+      window.onload = () => {
+        displayCart();
+      };
+    </script>
+
+  </head>
+  <body>
+
+    <!-- Cart Page -->
+    <main>
+      <section id="cart" class="cart-container">
+        <h2 class="text-center">Shopping Cart</h2>
+        <ul id="cart-list" class="list-unstyled"></ul>
+        <p id="total-price" class="text-center">Total: ₹0</p>
+        <div class="cart-footer">
+          <button onclick="checkoutCOD()">Cash on Delivery</button>
+        </div>
+        <img
+          id="empty-cart-image"
+          src="images/emptyCart.jpg"
+          alt="Empty Cart"
+          class="empty-cart"
+          style="display: none;"
+        />
+        <a href="product.html" class="back-to-products">Back to Products</a>
+      </section>
+    </main>
+  </body>
+</html>

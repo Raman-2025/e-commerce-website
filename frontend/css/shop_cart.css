@@ -1,0 +1,87 @@
+body {
+  background: linear-gradient(135deg, #f9fbfd, #e3e9f2);
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+.cart-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cart-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4a148c;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cart-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+.cart-list-item span {
+  flex: 1;
+}
+
+.cart-list-item input[type="number"] {
+  max-width: 70px;
+  margin-right: 10px;
+  padding: 5px;
+  font-size: 0.9rem;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.cart-list-item button {
+  background: transparent;
+  border: none;
+  color: #dc3545;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.cart-summary {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+.cart-footer button {
+  background: linear-gradient(135deg, #4caf50, #087f23);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.cart-footer button:hover {
+  background: linear-gradient(135deg, #087f23, #4caf50);
+}
+
+/* Add space between the cart items and the total price */
+.total-price {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: right;
+}
